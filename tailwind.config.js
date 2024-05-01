@@ -13,6 +13,7 @@ export default {
                 btnPrimaryLight: "#F5F8CC",
                 linkBg: "#E7EDFC",
                 linText: "#41558D",
+                successGreen: "#299D7C",
             },
 
             fontFamily: {

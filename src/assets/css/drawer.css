@@ -1,0 +1,9 @@
+@layer components {
+    .drawer {
+        @apply absolute bottom-0 left-0 w-full h-full outline-none overflow-hidden flex flex-col gap-4 items-center justify-end
+    }
+
+    .drawer-overlay {
+        @apply absolute top-0 left-0 w-full h-full bg-white opacity-75 z-40
+    }
+}

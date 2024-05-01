@@ -1,9 +1,31 @@
 @layer components {
     .external_link {
-        @apply flex items-center gap-3 bg-purple-600 px-4 py-2 rounded-md text-lg font-medium text-white shadow-sm shadow-purple-200 transition-all
+        @apply flex items-center gap-3 bg-purple-600 px-4 py-3 rounded-md text-base font-medium text-white shadow-sm shadow-purple-200 transition-all
     }
 
     .external_link:hover {
         @apply bg-purple-500 shadow-lg shadow-purple-300
     }
+
+
+    .btn {
+        @apply px-4 py-3 transition-all rounded-md
+    }
+
+    .btn.btn-success {
+        @apply bg-successGreen text-white font-semibold
+    }
+
+    .btn.btn-success:hover {
+        @apply bg-successGreen opacity-85
+    }
+
+    .btn.btn-success:active {
+        @apply bg-successGreen opacity-90 scale-[98%]
+    }
+
+    .btn-drawer-close {
+        @apply bg-primaryTextDark opacity-80 flex items-center justify-center rounded-full w-fit p-3 shadow-md shadow-gray-500
+    }
+
 }
