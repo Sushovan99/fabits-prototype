@@ -1,0 +1,9 @@
+@layer components {
+    .external_link {
+        @apply flex items-center gap-3 bg-purple-600 px-4 py-2 rounded-md text-lg font-medium text-white shadow-sm shadow-purple-200 transition-all
+    }
+
+    .external_link:hover {
+        @apply bg-purple-500 shadow-lg shadow-purple-300
+    }
+}
