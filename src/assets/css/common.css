@@ -2,4 +2,16 @@
     html {
         font-family: "DM Sans", system-ui, sans-serif;
     }
+
+    .gradient {
+        background: hsla(76, 68%, 39%, 1);
+
+        background: linear-gradient(90deg, hsla(76, 68%, 39%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+
+        background: -moz-linear-gradient(90deg, hsla(76, 68%, 39%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+
+        background: -webkit-linear-gradient(90deg, hsla(76, 68%, 39%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
+
+        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#83A720", endColorstr="#FFFFFF", GradientType=1);
+    }
 }
