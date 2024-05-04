@@ -1,0 +1,5 @@
+@layer components {
+    .pan-input {
+        @apply py-[10px] pl-3 pr-5 bg-backBtnBg font-medium rounded-xl border-2 border-backBtnBg focus-visible:ring-2 focus-visible:ring-btnPrimary focus-visible:outline-none placeholder:text-primaryTextLight
+    }
+}

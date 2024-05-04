@@ -6,10 +6,11 @@ export default {
             colors: {
                 primaryBg: "#D3DBEC",
                 primaryTextDark: "#2D2D2D",
-                primrayTextLight: "#575757",
+                primaryTextLight: "#575757",
                 secondaryTextDark: "#1D3B7A",
                 secondaryTextLight: "#2E529E",
                 btnPrimary: "#83A720",
+                backBtnBg: "rgba(131, 167, 32, 0.1)",
                 btnPrimaryLight: "#F5F8CC",
                 linkBg: "#E7EDFC",
                 linText: "#41558D",

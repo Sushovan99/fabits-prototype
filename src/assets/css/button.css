@@ -7,7 +7,6 @@
         @apply bg-purple-500 shadow-lg shadow-purple-300
     }
 
-
     .btn {
         @apply px-4 py-3 transition-all rounded-md
     }
@@ -28,4 +27,31 @@
         @apply bg-primaryTextDark opacity-80 flex items-center justify-center rounded-full w-fit p-3 shadow-md shadow-gray-500
     }
 
+    .btn-radio {
+        @apply flex flex-col gap-1 items-center cursor-pointer rounded-xl py-[10px] px-5 flex-1 transition-colors border-2 border-transparent
+    }
+
+    .btn-radio.active {
+        @apply border-2 border-btnPrimary
+    }
+
+    .btn-radio>h6 {
+        @apply font-semibold text-primaryTextDark
+    }
+
+    .btn-radio>input {
+        @apply hidden
+    }
+
+    .btn-radio>span {
+        @apply text-sm text-[#677C2B]
+    }
+
+    .btn-next {
+        @apply px-4 py-3 flex items-center justify-between text-white bg-btnPrimary w-full rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-transform
+    }
+
+    .btn-back {
+        @apply py-3 px-4 border-2 border-backBtnBg bg-[#F5F8CC] rounded-xl hover:bg-[#e5e8c1] transition-all active:scale-[0.98]
+    }
 }

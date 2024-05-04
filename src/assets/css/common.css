@@ -4,14 +4,16 @@
     }
 
     .gradient {
-        background: hsla(76, 68%, 39%, 1);
-
-        background: linear-gradient(90deg, hsla(76, 68%, 39%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-
-        background: -moz-linear-gradient(90deg, hsla(76, 68%, 39%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-
-        background: -webkit-linear-gradient(90deg, hsla(76, 68%, 39%, 1) 0%, hsla(0, 0%, 100%, 1) 100%);
-
-        filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#83A720", endColorstr="#FFFFFF", GradientType=1);
+        background-image: linear-gradient(180deg,
+                hsl(60deg 71% 66%) 0%,
+                hsl(60deg 72% 69%) 11%,
+                hsl(60deg 73% 72%) 22%,
+                hsl(60deg 74% 75%) 33%,
+                hsl(60deg 76% 78%) 44%,
+                hsl(60deg 77% 81%) 56%,
+                hsl(60deg 80% 84%) 67%,
+                hsl(60deg 84% 87%) 78%,
+                hsl(60deg 90% 90%) 89%,
+                hsl(60deg 100% 93%) 100%);
     }
 }

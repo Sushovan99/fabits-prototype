@@ -1,7 +1,9 @@
 @layer components {
     .heading {
-        @apply text-2xl font-semibold text-secondaryTextDark
+        @apply text-2xl font-semibold text-secondaryTextDark tracking-tighter
     }
 
-    .para {}
+    .heading-steps {
+        @apply text-xl font-semibold text-primaryTextDark tracking-tighter
+    }
 }

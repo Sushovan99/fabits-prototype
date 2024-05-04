@@ -6,10 +6,21 @@ import Car from "@/assets/images/car.png";
 
 interface Props {
     isOpen: boolean;
+    headingText: string;
+    subText: string;
+    isLoading: boolean;
+    children: React.ReactNode;
     onClose: () => void;
 }
 
-const Drawer: React.FunctionComponent<Props> = ({ isOpen, onClose }) => {
+const Drawer: React.FunctionComponent<Props> = ({
+    isOpen,
+    isLoading,
+    headingText,
+    subText,
+    children,
+    onClose,
+}) => {
     return createPortal(
         isOpen ? (
             <motion.div
@@ -24,13 +35,25 @@ const Drawer: React.FunctionComponent<Props> = ({ isOpen, onClose }) => {
                     type: "keyframes",
                 }}
             >
-                <button
+                <motion.button
+                    initial={{
+                        y: "60%",
+                        opacity: 0,
+                    }}
+                    animate={{
+                        y: 0,
+                        opacity: 1,
+                    }}
+                    transition={{
+                        type: "spring",
+                        delay: 0.3,
+                    }}
                     className="btn-drawer-close z-50"
                     type="button"
                     onClick={onClose}
                 >
                     <Close />
-                </button>
+                </motion.button>
 
                 <motion.div
                     className="rounded-3xl w-full h-auto z-50"
@@ -56,39 +79,59 @@ const Drawer: React.FunctionComponent<Props> = ({ isOpen, onClose }) => {
                         />
 
                         <div className="absolute top-6 left-4">
-                            <h1 className="heading">Get started with Fabits</h1>
+                            <h1 className="heading mb-1">{headingText}</h1>
                             <p className="text-secondaryTextLight font-normal">
-                                Answer a few questions to begin onboarding
+                                {subText}
                             </p>
                         </div>
 
-                        <motion.div
-                            className="absolute"
-                            initial={{
-                                left: "-100%",
-                                bottom: "24px",
-                                width: "112px",
-                            }}
-                            animate={{
-                                left: "100%",
-                            }}
-                            transition={{
-                                type: "tween",
-                                repeatType: "loop",
-                                ease: "easeOut",
-                                duration: 2,
-                                repeatDelay: 8,
-                                repeat: Infinity,
-                                delay: 0.5,
-                            }}
-                        >
-                            <img className="w-28" src={Car} alt="car" />
-                        </motion.div>
+                        {isLoading && (
+                            <motion.div
+                                className="absolute"
+                                initial={{
+                                    left: "-100%",
+                                    bottom: "24px",
+                                    width: "112px",
+                                }}
+                                animate={{
+                                    left: "100%",
+                                }}
+                                transition={{
+                                    type: "tween",
+                                    ease: "easeOut",
+                                    duration: 8,
+                                }}
+                            >
+                                <img className="w-28" src={Car} alt="car" />
+                            </motion.div>
+                        )}
+
+                        {!isLoading && (
+                            <motion.div
+                                className="absolute"
+                                initial={{
+                                    left: "-100%",
+                                    bottom: "24px",
+                                    width: "112px",
+                                }}
+                                animate={{
+                                    left: "100%",
+                                }}
+                                transition={{
+                                    type: "tween",
+                                    repeatType: "loop",
+                                    ease: "easeOut",
+                                    duration: 2,
+                                    repeatDelay: 8,
+                                    repeat: Infinity,
+                                }}
+                            >
+                                <img className="w-28" src={Car} alt="car" />
+                            </motion.div>
+                        )}
                     </div>
-                    <div className="bg-btnPrimary">
-                        <div>
-                            <h1>How much trading experience do you have?</h1>
-                        </div>
+                    <div className="gradient min-h-36 px-4 pb-4">
+                        {children}
                     </div>
                 </motion.div>
 
