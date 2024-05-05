@@ -1,3 +1,4 @@
+import { createLazyFileRoute } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Drawer from "@/components/Drawer";
@@ -9,6 +10,10 @@ import ArrowLeft from "@/assets/svgs/ArrowLeft";
 import Person from "@/assets/svgs/Person";
 import Home from "@/assets/svgs/Home";
 import FingerPrint from "@/assets/svgs/FingerPrint";
+
+export const Route = createLazyFileRoute("/project1")({
+    component: Project1,
+});
 
 const experienceArray = [
     {
@@ -257,5 +262,3 @@ function Project1() {
         </div>
     );
 }
-
-export default Project1;
