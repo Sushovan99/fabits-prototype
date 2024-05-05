@@ -12,7 +12,6 @@
     },
     "dependencies": {
         "@tanstack/react-router": "^1.31.19",
-        "@tanstack/router-devtools": "^1.31.19",
         "@tanstack/router-vite-plugin": "^1.31.18",
         "framer-motion": "^11.1.7",
         "react": "^18.2.0",
@@ -21,6 +20,7 @@
         "react-router-dom": "^6.23.0"
     },
     "devDependencies": {
+        "@tanstack/router-devtools": "^1.31.19",
         "@types/node": "^20.12.7",
         "@types/react": "^18.2.66",
         "@types/react-dom": "^18.2.22",
