@@ -98,9 +98,9 @@ function Project1() {
         }
     };
 
-    useEffect(() => {
-        setIsDrawerOpen(true);
-    }, []);
+    // useEffect(() => {
+    //     setIsDrawerOpen(true);
+    // }, []);
 
     useEffect(() => {
         if (currentStep === 3) {
