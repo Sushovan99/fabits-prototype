@@ -1,5 +1,6 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 import Header from "@/components/Header";
 import Drawer from "@/components/Drawer";
 import Step from "@/components/OnboardingSteps/Step";
@@ -142,103 +143,107 @@ function Project1() {
                         setCurrentStep(1);
                     }}
                 >
-                    {currentStep === 1 ? (
-                        <Step
-                            currentStep={currentStep}
-                            stepHeading="How much trading experience do you have ?"
-                        >
-                            <div className="flex items-center justify-between mb-8">
-                                {experienceArray.map((item) => (
-                                    <ButtonGroup
-                                        key={item.id}
-                                        id={item.id}
-                                        expRange={item.expRange}
-                                        currentSelection={tradingExp}
-                                        setCurrentSelection={setTradingExp}
-                                    />
-                                ))}
-                            </div>
-
-                            <div className="w-full">
-                                <button
-                                    className="btn-next"
-                                    type="button"
-                                    onClick={() => setCurrentStep(2)}
-                                >
-                                    <span>Next</span>
-
-                                    <span>
-                                        <ArrowRight />
-                                    </span>
-                                </button>
-                            </div>
-                        </Step>
-                    ) : null}
-
-                    {currentStep === 2 ? (
-                        <Step
-                            currentStep={currentStep}
-                            stepHeading="Please enter your PAN details to complete verification"
-                        >
-                            <div className="flex flex-col gap-1">
-                                <span className="text-primaryTextLight">
-                                    Verification method
-                                </span>
-
-                                <div className="flex items-center mb-6">
-                                    {verficationArray.map((item) => (
+                    <AnimatePresence>
+                        {currentStep === 1 && (
+                            <Step
+                                currentStep={currentStep}
+                                stepHeading="How much trading experience do you have ?"
+                            >
+                                <div className="flex items-center justify-between mb-8">
+                                    {experienceArray.map((item) => (
                                         <ButtonGroup
                                             key={item.id}
                                             id={item.id}
-                                            currentSelection={
-                                                verificationMethod
-                                            }
-                                            setCurrentSelection={
-                                                setVerificationMethod
-                                            }
+                                            expRange={item.expRange}
+                                            currentSelection={tradingExp}
+                                            setCurrentSelection={setTradingExp}
                                         />
                                     ))}
                                 </div>
 
-                                <div className="flex items-center justify-between mb-6">
-                                    <label
-                                        htmlFor="PAN"
-                                        className="text-primaryTextLight"
-                                    >
-                                        PAN Card Number
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        defaultValue={"DKWPAXXXXM"}
-                                        id="PAN"
-                                        className="pan-input"
-                                    />
-                                </div>
-
-                                <div className="flex items-center gap-4">
-                                    <button
-                                        className="btn-back"
-                                        type="button"
-                                        onClick={() => setCurrentStep(1)}
-                                    >
-                                        <ArrowLeft />
-                                    </button>
-
+                                <div className="w-full">
                                     <button
                                         className="btn-next"
                                         type="button"
-                                        onClick={() => setCurrentStep(3)}
+                                        onClick={() => setCurrentStep(2)}
                                     >
-                                        <span>Complete</span>
+                                        <span>Next</span>
+
                                         <span>
                                             <ArrowRight />
                                         </span>
                                     </button>
                                 </div>
-                            </div>
-                        </Step>
-                    ) : null}
+                            </Step>
+                        )}
+                    </AnimatePresence>
+
+                    <AnimatePresence>
+                        {currentStep === 2 && (
+                            <Step
+                                currentStep={currentStep}
+                                stepHeading="Please enter your PAN details to complete verification"
+                            >
+                                <div className="flex flex-col gap-1">
+                                    <span className="text-primaryTextLight">
+                                        Verification method
+                                    </span>
+
+                                    <div className="flex items-center mb-6">
+                                        {verficationArray.map((item) => (
+                                            <ButtonGroup
+                                                key={item.id}
+                                                id={item.id}
+                                                currentSelection={
+                                                    verificationMethod
+                                                }
+                                                setCurrentSelection={
+                                                    setVerificationMethod
+                                                }
+                                            />
+                                        ))}
+                                    </div>
+
+                                    <div className="flex items-center justify-between mb-6">
+                                        <label
+                                            htmlFor="PAN"
+                                            className="text-primaryTextLight"
+                                        >
+                                            PAN Card Number
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            defaultValue={"DKWPAXXXXM"}
+                                            id="PAN"
+                                            className="pan-input"
+                                        />
+                                    </div>
+
+                                    <div className="flex items-center gap-4">
+                                        <button
+                                            className="btn-back"
+                                            type="button"
+                                            onClick={() => setCurrentStep(1)}
+                                        >
+                                            <ArrowLeft />
+                                        </button>
+
+                                        <button
+                                            className="btn-next"
+                                            type="button"
+                                            onClick={() => setCurrentStep(3)}
+                                        >
+                                            <span>Complete</span>
+                                            <span>
+                                                <ArrowRight />
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </Step>
+                        )}
+                    </AnimatePresence>
 
                     {currentStep === 4 ? (
                         <div className="flex flex-col gap-6">
