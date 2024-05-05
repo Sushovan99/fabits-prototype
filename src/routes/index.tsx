@@ -1,11 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { FaExternalLinkAlt } from "react-icons/fa";
-
 import Logo from "@/assets/svgs/fabits_logo.svg";
-
-export const Route = createFileRoute("/")({
-    component: Index,
-});
 
 function Index() {
     return (
@@ -27,3 +22,5 @@ function Index() {
         </div>
     );
 }
+
+export default Index;

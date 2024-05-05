@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import Logo from "@/assets/svgs/fabits_logo.svg";
 import Menu from "@/assets/svgs/Menu";
 import Notification from "@/assets/svgs/Notification";
@@ -11,7 +11,7 @@ const Header: React.FunctionComponent = () => {
                 <button type="button">
                     <Menu />
                 </button>
-                <Link>
+                <Link to={"#"}>
                     <img src={Logo} alt="fabits-logo" />
                 </Link>
             </div>
