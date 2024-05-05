@@ -1,6 +1,6 @@
 import { createLazyFileRoute } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Header from "@/components/Header";
 import Drawer from "@/components/Drawer";
 import Step from "@/components/OnboardingSteps/Step";
@@ -245,23 +245,42 @@ function Project1() {
                         )}
                     </AnimatePresence>
 
-                    {currentStep === 4 ? (
-                        <div className="flex flex-col gap-6">
-                            {cardsArray.map((item) => (
-                                <Project1Card
-                                    key={item.id}
-                                    cardLabel={item.cardLabel}
-                                    icon={item.icon}
-                                    cardSecondaryLabel={item.cardSecondaryLabel}
-                                    cardSecondaryLabelValue={
-                                        item.cardSecondaryLabelValue
-                                    }
-                                    fetchedVia={item.fetchedVia}
-                                    labelValue={item.labelValue}
-                                />
-                            ))}
-                        </div>
-                    ) : null}
+                    <AnimatePresence>
+                        {currentStep === 4 && (
+                            <motion.div
+                                className="flex flex-col gap-6"
+                                initial={{
+                                    y: "200%",
+                                }}
+                                animate={{
+                                    y: 0,
+                                }}
+                                exit={{
+                                    y: "200%",
+                                }}
+                                transition={{
+                                    type: "spring",
+                                    duration: 0.8,
+                                }}
+                            >
+                                {cardsArray.map((item) => (
+                                    <Project1Card
+                                        key={item.id}
+                                        cardLabel={item.cardLabel}
+                                        icon={item.icon}
+                                        cardSecondaryLabel={
+                                            item.cardSecondaryLabel
+                                        }
+                                        cardSecondaryLabelValue={
+                                            item.cardSecondaryLabelValue
+                                        }
+                                        fetchedVia={item.fetchedVia}
+                                        labelValue={item.labelValue}
+                                    />
+                                ))}
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </Drawer>
             </main>
         </div>

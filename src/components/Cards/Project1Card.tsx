@@ -20,7 +20,7 @@ const Project1Card: React.FunctionComponent<Props> = ({
             target="_blank"
             rel="noreferrer"
             href="https://www.linkedin.com/in/sushovan-biswas-89019a217/"
-            className="relative bg-white/90 rounded-xl p-4 shadow-xl shadow-black/10"
+            className="card relative bg-white/90 rounded-xl p-4 shadow-xl shadow-black/10"
         >
             <div className="flex items-start gap-3 mb-3">
                 <span className="bg-secondaryTextDark p-4 rounded-full">
