@@ -74,6 +74,7 @@ const Drawer: React.FunctionComponent<Props> = ({
                     <div className="w-full relative">
                         <img
                             src={AnimationBg}
+                            loading="eager"
                             alt="animation-bg"
                             className={`w-full ${currentStep === 4 ? "blur-sm" : ""} transition-all`}
                         />
