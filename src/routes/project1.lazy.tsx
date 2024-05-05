@@ -3,9 +3,13 @@ import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Drawer from "@/components/Drawer";
 import Step from "@/components/OnboardingSteps/Step";
+import Project1Card from "@/components/Cards/Project1Card";
 import ButtonGroup from "@/components/ButtonGroup";
 import ArrowRight from "@/assets/svgs/ArrowRight";
 import ArrowLeft from "@/assets/svgs/ArrowLeft";
+import Person from "@/assets/svgs/Person";
+import Home from "@/assets/svgs/Home";
+import FingerPrint from "@/assets/svgs/FingerPrint";
 
 export const Route = createLazyFileRoute("/project1")({
     component: Project1,
@@ -39,6 +43,36 @@ const verficationArray = [
     },
 ];
 
+const cardsArray = [
+    {
+        id: "1",
+        icon: <Person />,
+        cardLabel: "CMRPMXXXXF",
+        labelValue: "Sushovan Biswas",
+        fetchedVia: "NSDL",
+        cardSecondaryLabel: "Last Updated",
+        cardSecondaryLabelValue: "24/04/2024",
+    },
+    {
+        id: "2",
+        icon: <FingerPrint />,
+        cardLabel: "Address",
+        labelValue: "Aadhaar UID",
+        fetchedVia: "Digio",
+        cardSecondaryLabel: "Date of Birth",
+        cardSecondaryLabelValue: "18/10/1994",
+    },
+    {
+        id: "3",
+        icon: <Home />,
+        cardLabel: "Address",
+        labelValue: "16/2, 8 Jat Regiment, c/o 56 APO",
+        fetchedVia: "NSDL",
+        cardSecondaryLabel: "Address Type",
+        cardSecondaryLabelValue: "Correspondence",
+    },
+];
+
 function Project1() {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [tradingExp, setTradingExp] = useState("Beginner");
@@ -68,6 +102,16 @@ function Project1() {
         setIsDrawerOpen(true);
     }, []);
 
+    useEffect(() => {
+        if (currentStep === 3) {
+            const timer = setTimeout(() => {
+                setCurrentStep(4);
+            }, 7950);
+
+            return () => clearTimeout(timer);
+        }
+    }, [currentStep]);
+
     return (
         <div className="bg-primaryBg h-screen p-12">
             <main
@@ -88,7 +132,7 @@ function Project1() {
 
                 <Drawer
                     isOpen={isDrawerOpen}
-                    isLoading={currentStep === 3}
+                    currentStep={currentStep}
                     headingText={
                         getDrawerHeadingAndSubHeading(currentStep).headingText
                     }
@@ -194,6 +238,24 @@ function Project1() {
                                 </div>
                             </div>
                         </Step>
+                    ) : null}
+
+                    {currentStep === 4 ? (
+                        <div className="flex flex-col gap-6">
+                            {cardsArray.map((item) => (
+                                <Project1Card
+                                    key={item.id}
+                                    cardLabel={item.cardLabel}
+                                    icon={item.icon}
+                                    cardSecondaryLabel={item.cardSecondaryLabel}
+                                    cardSecondaryLabelValue={
+                                        item.cardSecondaryLabelValue
+                                    }
+                                    fetchedVia={item.fetchedVia}
+                                    labelValue={item.labelValue}
+                                />
+                            ))}
+                        </div>
                     ) : null}
                 </Drawer>
             </main>

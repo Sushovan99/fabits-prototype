@@ -15,5 +15,51 @@
                 hsl(60deg 84% 87%) 78%,
                 hsl(60deg 90% 90%) 89%,
                 hsl(60deg 100% 93%) 100%);
+        transform: translateY(-1px);
+    }
+}
+
+.hide-scroll {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.car-animation {
+    position: absolute;
+    width: 112px;
+    animation: movingAnimation 8s ease;
+}
+
+@keyframes movingAnimation {
+    0% {
+        left: 0%;
+        bottom: 24px;
+    }
+
+    50% {
+        left: 40%;
+        bottom: 24px;
+    }
+
+    60% {
+        left: 40%;
+        bottom: 18px;
+    }
+
+    70% {
+        left: 40%;
+        bottom: 36px;
+    }
+
+    80% {
+        left: 40%;
+        bottom: 24px;
+    }
+
+    100% {
+        left: 100%;
+        bottom: 24px;
     }
 }

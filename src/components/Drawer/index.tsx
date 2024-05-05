@@ -8,14 +8,14 @@ interface Props {
     isOpen: boolean;
     headingText: string;
     subText: string;
-    isLoading: boolean;
+    currentStep: number;
     children: React.ReactNode;
     onClose: () => void;
 }
 
 const Drawer: React.FunctionComponent<Props> = ({
     isOpen,
-    isLoading,
+    currentStep,
     headingText,
     subText,
     children,
@@ -56,7 +56,7 @@ const Drawer: React.FunctionComponent<Props> = ({
                 </motion.button>
 
                 <motion.div
-                    className="rounded-3xl w-full h-auto z-50"
+                    className="relative rounded-tr-3xl rounded-tl-3xl w-full h-auto z-50 max-h-[80%] overflow-y-scroll overflow-x-hidden hide-scroll"
                     initial={{
                         y: "200%",
                         opacity: 0,
@@ -75,7 +75,7 @@ const Drawer: React.FunctionComponent<Props> = ({
                         <img
                             src={AnimationBg}
                             alt="animation-bg"
-                            className="w-full"
+                            className={`w-full ${currentStep === 4 ? "blur-sm" : ""} transition-all`}
                         />
 
                         <div className="absolute top-6 left-4">
@@ -85,28 +85,13 @@ const Drawer: React.FunctionComponent<Props> = ({
                             </p>
                         </div>
 
-                        {isLoading && (
-                            <motion.div
-                                className="absolute"
-                                initial={{
-                                    left: "-100%",
-                                    bottom: "24px",
-                                    width: "112px",
-                                }}
-                                animate={{
-                                    left: "100%",
-                                }}
-                                transition={{
-                                    type: "tween",
-                                    ease: "easeOut",
-                                    duration: 8,
-                                }}
-                            >
+                        {currentStep === 3 && (
+                            <div className="car-animation">
                                 <img className="w-28" src={Car} alt="car" />
-                            </motion.div>
+                            </div>
                         )}
 
-                        {!isLoading && (
+                        {(currentStep === 1 || currentStep === 2) && (
                             <motion.div
                                 className="absolute"
                                 initial={{
