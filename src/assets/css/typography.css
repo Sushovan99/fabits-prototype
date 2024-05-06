@@ -6,4 +6,8 @@
     .heading-steps {
         @apply text-xl font-semibold text-primaryTextDark tracking-tighter
     }
+
+    .heading-secondary {
+        @apply text-primaryTextDark text-2xl font-bold
+    }
 }
