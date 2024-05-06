@@ -54,4 +54,10 @@
     .btn-back {
         @apply py-3 px-4 border-2 border-backBtnBg bg-[#F5F8CC] rounded-xl hover:bg-[#e5e8c1] transition-all active:scale-[0.98]
     }
+
+    .btn-round {
+        @apply border border-primaryBg bg-white rounded-full p-2 hover:bg-linkBg transition-colors active:scale-[.98]
+    }
+
+    .btn-avatar {}
 }

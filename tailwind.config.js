@@ -5,6 +5,7 @@ export default {
         extend: {
             colors: {
                 primaryBg: "#D3DBEC",
+                project2Bg: "#F4F7FE",
                 primaryTextDark: "#2D2D2D",
                 primaryTextLight: "#575757",
                 secondaryTextDark: "#1D3B7A",
@@ -13,7 +14,7 @@ export default {
                 backBtnBg: "rgba(131, 167, 32, 0.1)",
                 btnPrimaryLight: "#F5F8CC",
                 linkBg: "#E7EDFC",
-                linText: "#41558D",
+                linkText: "#41558D",
                 successGreen: "#299D7C",
             },
 
