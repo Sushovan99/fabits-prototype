@@ -16,6 +16,7 @@ export default {
                 linkBg: "#E7EDFC",
                 linkText: "#41558D",
                 successGreen: "#299D7C",
+                textLabel: "#727272",
             },
 
             fontFamily: {

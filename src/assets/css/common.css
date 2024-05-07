@@ -32,6 +32,18 @@
     animation: movingAnimation 8s ease;
 }
 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(336px, 1fr));
+    /* Adjust your column width as needed */
+    grid-auto-rows: 100px;
+    /* Adjust your row height as needed */
+    grid-gap: 10px;
+    /* Adjust gap between grid items */
+    grid-auto-flow: row;
+    /* This ensures items flow to the next row when there's no space */
+}
+
 @keyframes movingAnimation {
     0% {
         left: 0%;
