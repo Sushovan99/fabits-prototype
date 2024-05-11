@@ -4,6 +4,7 @@
 @import url('./assets/css/typography.css');
 @import url('./assets/css/input.css');
 @import url('./assets/css/sidenav.css');
+@import url('./assets/css/card.css');
 
 @tailwind components;
 @tailwind utilities;

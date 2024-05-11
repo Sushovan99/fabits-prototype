@@ -8,6 +8,6 @@
     }
 
     .heading-secondary {
-        @apply text-primaryTextDark text-2xl font-bold
+        @apply text-primaryTextDark text-lg lg:text-2xl font-bold
     }
 }

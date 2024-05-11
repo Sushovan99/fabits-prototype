@@ -6,9 +6,9 @@ const Project2Card: React.FunctionComponent = () => {
             rel="noreferrer"
             className="p-6 border border-primaryBg rounded-3xl"
         >
-            <div className="flex items-start gap-4">
-                <div className="md:w-16 md:h-16 xl:w-20 lg:h-20 rounded-2xl bg-[#D9D9D9] shrink-0"></div>
-                <h2 className="text-primaryTextDark font-semibold text-base lg:text-lg">
+            <div className="flex items-start gap-4 flex-nowrap">
+                <div className="h-16 w-16 xl:w-20 xl:h-20 rounded-2xl bg-[#D9D9D9] shrink-0"></div>
+                <h2 className="text-primaryTextDark font-semibold text-base xl:text-lg">
                     Dhairyadev & Sayali's Vacation Plan 1
                 </h2>
             </div>
