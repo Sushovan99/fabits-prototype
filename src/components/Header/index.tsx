@@ -6,7 +6,7 @@ import Account from "@/assets/svgs/Account";
 
 const Header: React.FunctionComponent = () => {
     return (
-        <header className="flex px-4 py-5 justify-between items-center bg-white border-b-2 rounded-sm sticky top-0 left-0 z-50">
+        <header className="flex px-4 py-5 justify-between items-center bg-white border-b-2 rounded-sm sticky top-0 left-0 z-50 lg:hidden">
             <div className="flex item-center gap-4">
                 <button
                     type="button"

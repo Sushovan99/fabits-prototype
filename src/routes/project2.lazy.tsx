@@ -17,9 +17,7 @@ export const Route = createLazyFileRoute("/project2")({
 function Project2() {
     return (
         <div className="bg-project2Bg min-h-screen w-full relative">
-            <div className="block lg:hidden">
-                <Header />
-            </div>
+            <Header />
 
             <aside className="hidden lg:block">
                 <SideNav />
