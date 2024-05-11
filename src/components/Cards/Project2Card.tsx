@@ -1,3 +1,5 @@
+import Vacation from "@/assets/svgs/Vacation";
+
 const Project2Card: React.FunctionComponent = () => {
     return (
         <a
@@ -7,7 +9,10 @@ const Project2Card: React.FunctionComponent = () => {
             className="p-6 border border-primaryBg rounded-3xl"
         >
             <div className="flex items-start gap-4 flex-nowrap">
-                <div className="h-16 w-16 xl:w-20 xl:h-20 rounded-2xl bg-[#D9D9D9] shrink-0"></div>
+                <div className="h-16 w-16 xl:w-20 xl:h-20 rounded-2xl bg-[#D9D9D9] shrink-0 hidden lg:block"></div>
+                <span className="card-icon block lg:hidden">
+                    <Vacation />
+                </span>
                 <h2 className="text-primaryTextDark font-semibold text-base xl:text-lg">
                     Dhairyadev & Sayali's Vacation Plan 1
                 </h2>

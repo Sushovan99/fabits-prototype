@@ -12,9 +12,10 @@ const Carousel: React.FunctionComponent = () => {
         slidesToShow: 3,
         slidesToScroll: 3,
         initialSlide: 0,
+        variableWidth: true,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 4,
@@ -38,8 +39,8 @@ const Carousel: React.FunctionComponent = () => {
     };
 
     return (
-        <div className="bg-white lg:rounded-3xl border border-primaryBg lg:shadow-lg lg:shadow-gray-200">
-            <div className="flex flex-col gap-2 items-start py-6 px-4 lg:py-0 lg:px-0 lg:pt-8 lg:pl-8 max-w-xs">
+        <div className="flex flex-col lg:flex-row lg:items-center bg-white lg:rounded-3xl border border-primaryBg lg:shadow-lg lg:shadow-gray-200">
+            <div className="flex flex-col gap-2 items-start py-6 px-4 lg:py-0 lg:px-0 lg:pt-8 lg:pl-8 max-w-xs shrink-0 lg:self-start">
                 <h1 className="heading-secondary">
                     What financial goal do you want to plan today?
                 </h1>
@@ -47,15 +48,16 @@ const Carousel: React.FunctionComponent = () => {
                     Select a goal to start planning
                 </p>
 
-                <span className="hidden lg:block self-center">
+                <span className="hidden xl:block self-center">
                     <NoteStack />
                 </span>
             </div>
 
-            <Slider {...settings} className="pl-4 pb-4">
+            <Slider {...settings} className="pl-4 pb-4 overflow-hidden">
                 {carouselArray.map((item) => (
                     <CarouselCard
                         key={item.id}
+                        lastChild={item.id === carouselArray.length}
                         icon={item.icon}
                         title={item.title}
                         subText={item.subText}
